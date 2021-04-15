@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/coffee/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/coffee/css/user.css">
-<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/cafe/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/cafe/css/user.css">
+<script type="text/javascript" src="/cafe/js/jquery-3.6.0.min.js"></script>
 <style type="text/css">
 	#fr {
 		display: none;

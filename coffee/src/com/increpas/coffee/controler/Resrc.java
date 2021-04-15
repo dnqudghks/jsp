@@ -13,20 +13,18 @@ public class Resrc extends HttpServlet {
 		// ==>요청파일 경로 추출한다.
 		/*
 		 	/css/w3.css 또는 /js/jquery-3.6.0.min.js
+		 	
+		 	w3.css 파일을 요청하는 경우
+		 	 url - /cafe/css/w3.css
+		 	 
+		 	url에서 /cafe 이후 부분을 추출해서 문서의 경로를 만들어주면 된다.
+		 	
+		 	 
 		 */
 		
 		url = url.substring(url.indexOf("/", 1));
 		
-		// 요청 루트 경로
-		// <== /css || /js || /img
-		String spath = url.substring(0, url.indexOf("/", 1));
-		
-		url = url.substring(url.indexOf(spath + "/"));
-		
-		String view = "/WEB-INF/resources" + url;
-		
-		//응답을 해준다.
-		RequestDispatcher rd = req.getRequestDispatcher(view);
+		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/resources" + url);
 		try {
 			rd.forward(req, resp);
 		} catch(Exception e) {
