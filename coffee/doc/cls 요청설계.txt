@@ -1,0 +1,17 @@
+#mainPage 요청
+요청내용 : http://localhost/cafe/html/main.cls
+파라미터 : 무
+컨트롤러 : com.increpas.coffee.controller.MainController
+뷰		 : /WEB_INF/view/main.jsp
+
+#회원추가 폼보기 요청
+요청내용 : http://localhost/cafe/html/addmember.cls
+파라미터 : 무
+컨트롤러 : com.increpas.coffee.j05/AddMember
+뷰		 : /WEB_INF/views/J05/addmember.jsp
+
+# 회원정보보기 요청
+요청내용 : http://localhost/cafe/j05/memberinfo.cls
+파라미터 : name, id, gen, avt 
+컨트롤러 : com.increpas.coffee.j05/AddMember
+뷰		 : /WEB_INF/views/J05/memberinfo.jsp

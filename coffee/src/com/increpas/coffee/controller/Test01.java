@@ -1,4 +1,4 @@
-package com.increpas.coffee.controler;
+package com.increpas.coffee.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
