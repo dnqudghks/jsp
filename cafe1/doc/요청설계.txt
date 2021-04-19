@@ -1,0 +1,19 @@
+회원관련 요청설계(non-dispatch)
+
+로그인 폼 보기 요청
+요청 내용 : http://localhost/cafe/member/login.cls
+파라미터 : 무
+컨트롤러 : com.increpas.coffee.controller.member.LoginForm
+뷰		 : /WEB-INF/views/member/login.jsp
+
+로그인 처리 요청
+요청내용 : http://localhost/cafe/member/loginProc.cls
+파라미터 : id, pw
+컨트롤러 : com.increpas.coffee.controller.member.clsLoginProc
+뷰       : 
+
+				로그인성공
+					redirect ] /cafe/main.cls
+					
+				로그인실패
+					redirect ] /cafe/member/login.cls

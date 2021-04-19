@@ -1,0 +1,79 @@
+.mxw460 {
+    max-width: 460px;
+}
+.mxw500 {
+    max-width: 500px;
+}
+.mxw550 {
+    max-width: 550px;
+}
+.mxw600 {
+    max-width: 600px;
+}
+.mxw650 {
+    max-width: 650px;
+}
+.mxw700 {
+    max-width: 700px;
+}
+.mxw750 {
+    max-width: 750px;
+}
+.mxw800 {
+    max-width: 800px;
+}
+.w250 {
+	width:250px;
+}
+
+.box250 {
+	width:250px;
+	height: 250px;
+}
+/* 마진 클래스 */
+
+.mgl10 {
+	margin-left: 10px;
+}
+.mgl20 {
+	margin-left: 20px;
+}
+
+.mgt10 {
+	margin-top: 10px;
+}
+.mgt20 {
+	margin-top: 20px;
+}
+
+/* 패딩 클래스 */
+
+.pdAll20 {
+	padding: 20px
+}
+.pdl0{
+	padding-left: 10px;
+}
+.pdl20{
+	padding-left: 20px;
+}
+
+.pdv30 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.pdt10{
+	padding-top: 10px;
+}
+/* 디스플레이 클래스 */
+.inblock {
+	display: inline-block;
+}
+
+.cntnt100 {
+	width: 100px;
+	height: 100px;
+}
+.pdAll10 {
+   padding : 10px; 
+}
