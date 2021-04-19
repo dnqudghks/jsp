@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginStart extends HttpServlet {
 public void service(HttpServletRequest req, HttpServletResponse resp) {
 		HashMap<String, String> map = new HashMap<String, String>();
-		String view = "/WEB-INF/views/member/login.jsp";
+		String view = "/WEB-INF/views/member/login_ajax.jsp";
 		RequestDispatcher rd = req.getRequestDispatcher(view);
 		try {
 			rd.forward(req, resp);

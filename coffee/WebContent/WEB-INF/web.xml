@@ -1,26 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <web-app 
 	version="3.1" 
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                       
 						http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-
-
-	<!-- 서블릿 정의 -->
-	<servlet>
-		<servlet-name>mainCont</servlet-name>
-		<servlet-class>com.increpas.coffee.controller.MainController</servlet-class>
-	</servlet>
-
+	
+	<!-- 서블릿 정의 부분 -->
+    <servlet>
+        <servlet-name>mainCont</servlet-name>
+        <servlet-class>com.increpas.coffee.controller.MainController</servlet-class>
+    </servlet>
+	
+    <servlet>
+        <servlet-name>addMemb</servlet-name>
+        <servlet-class>com.increpas.coffee.j05.AddMember</servlet-class>
+    </servlet>
+	
+    <servlet>
+        <servlet-name>membInfo1</servlet-name>
+        <servlet-class>com.increpas.coffee.j05.MemberInfo</servlet-class>
+    </servlet>
+	
+    <servlet>
+        <servlet-name>membInfo2</servlet-name>
+        <servlet-class>com.increpas.coffee.j05.MemberInfo2</servlet-class>
+    </servlet>
+	
 	<!-- 정의된 서블릿 매핑 -->
 	<servlet-mapping>
 		<servlet-name>mainCont</servlet-name>
 		<url-pattern>/main.cls</url-pattern>
 	</servlet-mapping>
 	
-	<welcome-file-list>
-		<welcome-file>main.jsp</welcome-file>
-	</welcome-file-list>
+	<servlet-mapping>
+		<servlet-name>addMemb</servlet-name>
+		<url-pattern>/j05/addMember.cls</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>membInfo1</servlet-name>
+		<url-pattern>/j05/memberInfo.cls</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>membInfo2</servlet-name>
+		<url-pattern>/j05/memberInfo2.cls</url-pattern>
+	</servlet-mapping>
+	
+	
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>main.jsp</welcome-file>
+    </welcome-file-list>
+
 </web-app>
