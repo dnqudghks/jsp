@@ -39,9 +39,13 @@
 			$('#frm').attr('action', '/cafe/member/login.cls');
 			$('#frm').submit();
 		});
-		
+		/* 로그아웃버튼 이벤트 처리*/
 		$('#logout').click(function(){
 			$(location).attr('href', 'http://localhost/cafe/member/logout.cls');
+		});
+		/* 회원가입버튼 이벤트 처리*/
+		$('#join').click(function(){
+			$(location).attr('href', 'http://localhost/cafe/member/join.cls');
 		});
 	});
 </script>
