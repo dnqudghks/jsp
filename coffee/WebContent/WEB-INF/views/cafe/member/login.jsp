@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cafe Login</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/cafe/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/cafe/css/user.css">
 <script type="text/javascript" src="/cafe/js/jquery-3.6.0.min.js"></script>
@@ -39,7 +39,7 @@
 	<div class="w3-content mxw650 w3-center">
 		<h1 class="w3-blue w3-padding w3-card-4 w3-round-large">Login</h1>
 		
-		<form method="POST" action="http://localhost/cafe/member/loginProc.cls" name="frm" id="frm"
+		<form method="POST" action="http://localhost/cafe/member/loginProc.cafe" name="frm" id="frm"
 				class="showFr">
 			<div class="w3-col w3-margin-top w3-card-4 w3-padding w3-round-large">
 				<div class="w3-col w3-margin-top">
@@ -58,6 +58,31 @@
 			<div class="w3-half w3-padding w3-green w3-hover-lime" id="lbtn">login</div>
 		</div>
 
-	</div>
+	<!-- 로그인실패시 메세지처리 -->
+<%--<c:if test='${not empty param.MSG}'>--%>
+
+<c:if test='${not empty MSG}'>
+		<div id="msgWin" class ="w3-modal">
+			<div class ="w3-modal-content mxw600 w3-card-4">
+				<header class="w3-container w3-red">
+					<span class ="w3-button w3-display-topright" id="closeBtn">&times;</span>
+					<h2>로그인 실패</h2>
+				</header>
+				<div class="w3-container w3-margin-bottom">
+					<h3 class="w3-padding w3-text-red">로그인에 실패했습니다.</h3>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#msgWin').css('display', 'block');
+			
+			$('#closeBtn').click(function(){
+					$('#msgWin').css('display', 'none');
+			});
+		});
+	</script>
+</c:if>
+</div>
 </body>
 </html>

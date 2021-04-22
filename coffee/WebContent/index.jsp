@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:redirect url="/main.cls">
+	<c:redirect url="/main.cafe">
 	</c:redirect>
 </body>
 </html>

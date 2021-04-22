@@ -1,13 +1,21 @@
-package com.increpas.coffee.dispatch;
+package com.increpas.cafe.dispatch;
 
-import java.io.*;
-import java.util.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Properties;
 
-import javax.servlet.http.*;
-import javax.servlet.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import com.increpas.coffee.controller.*;
+import com.increpas.cafe.controller.CafeController;
 
 /**
  * 이 클래스는 확장자가 .cafe로 요청이 오는 경우
@@ -113,6 +121,31 @@ public class CafeDispatch extends HttpServlet {
 		// 실행해야할 컨트롤러를 선택해서 
 		// 앞에서 map에 등록된 것을 이용해서 알아낸다.
 		CafeController controller = map.get(real);
+		
+		// 뷰 처리방식 변수 선언
+		Boolean bool = false;
+		
+		// 변수를 요청객체에 넣어서 CafeController 를 호출한다.
+		// 이때 요청 객체는 사용자가 요청할때 만들어진 요청객체를
+		// CafeController 에 입력하면서 함수를 호출하게 된다.
+		// 다시말해서 하나의 객체를 계속 사용하게 된다.
+		req.setAttribute("isRedirect", bool);
+		/*
+		 	이제 CafeController 에서 isRedirect 의 속성값을 변경하지 않으면
+		 	계속 데이터는 false로 유지될 것 이고
+		 	이때는 forward 방식으로 뷰릴 부르고
+		 	
+		 	만약 exec 함수내에서 이 속성값을 변경하게 되면
+		 	다른 방식으로
+		 		redirect, ajax 처리
+		 	도 이곳에서 처리해주면 된다.
+		 	
+		 	isRedirect 속성값 설명 ]
+		 		false : forward 방식
+		 		true  : redirect 방식
+		 		null  : 비동기 통신 처리
+		 */
+		
 		// 실행하고
 		String view = controller.exec(req, resp);
 		// 뷰를 호출한다.
@@ -138,11 +171,25 @@ public class CafeDispatch extends HttpServlet {
 		 			뒤에 붙는 확장자는 surfix라는 변수로 처리하기로 하자.
 		 */
 		
-		String prefix = "/WEB-INF/views/";
-		String surrfix = ".jsp";
+		// 요청객체에 isRedirect 속성값을 변수에 담고 
+		bool = (Boolean)req.getAttribute("isRedirect");
+		// 변수의 내용을 살펴서 처리한다.
+		if(bool == null) {
+			//비동기 통신처리
+			PrintWriter pw = resp.getWriter();
+			pw.print(view);
+		}else if (bool) {
+			//리다이렉트 처리하는 경우
+			resp.sendRedirect(view);
+		}else {
+		//forward 방식 처리
+		String prefix = "/WEB-INF/views/cafe/";
+		String surrffix = ".jsp";
 		
-		RequestDispatcher rd = req.getRequestDispatcher(prefix + view + surrfix);
+		RequestDispatcher rd = req.getRequestDispatcher(prefix + view + surrffix);
 		rd.forward(req, resp);
+		
+		}
 	}
 	
 }

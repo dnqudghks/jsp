@@ -1,4 +1,4 @@
-package com.increpas.coffee.controller;
+package com.increpas.cafe.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CafeMain implements CafeController {
 
 	@Override
-	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public String exec(HttpServletRequest req, HttpServletResponse resp) {
 		String view = "main";
 		return view;
 	}

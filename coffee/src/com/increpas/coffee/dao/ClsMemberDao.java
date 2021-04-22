@@ -6,12 +6,14 @@ package com.increpas.coffee.dao;
  * @since	2021.04.19
  * @version	v.1.0
  */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-import java.sql.*;
-
-import com.increpas.coffee.db.*;
-import com.increpas.coffee.sql.*;
-import com.increpas.coffee.vo.*;
+import com.increpas.cafe.sql.MemberSQL;
+import com.increpas.coffee.db.ClsJDBC;
+import com.increpas.coffee.vo.MemberVO;
 
 public class ClsMemberDao {
 /*

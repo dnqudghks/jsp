@@ -1,4 +1,4 @@
-package com.increpas.coffee.dao;
+package com.increpas.cafe.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -20,7 +20,7 @@ import com.increpas.coffee.vo.MemberVO;
  *
  */
 
-public class ClsMembDao {
+public class MemberDao {
 	// 커넥션 풀을 관할 변수
 	CafeDBCP db;
 	Connection con;
@@ -29,7 +29,7 @@ public class ClsMembDao {
 	ResultSet rs;
 	MemberSQL mSQL;
 	
-	public ClsMembDao() {
+	public MemberDao() {
 		db = new CafeDBCP();
 		mSQL = new MemberSQL();
 	}
@@ -93,4 +93,64 @@ public class ClsMembDao {
 		return mVO;
 		
 	}
+	
+	// 로그인 처리 데이터 베이스 작업 잔담 처리함수
+	public int getLoginCnt(String sid, String spw) {
+		int cnt = 0;
+		
+		// 1. Connection꺼내오고
+		con = db.getCon();
+		
+		// 2. SQL 질의명령꺼내오고
+		String sql = mSQL.getSQL(mSQL.SEL_LOGIN);
+		
+		// 3. 스테이트먼트 준비하고
+		pstmt = db.getPSTMT(con, sql);
+		try{
+			// 4. 질의명령을 완성하고
+			pstmt.setString(1, sid);
+			pstmt.setString(2, spw);
+			// 5. 질의명령 보내고 결과받고
+			rs = pstmt.executeQuery();
+			// 6. 데이터 추출하고
+			// 집계함수를 사용하는 질의 명령이므로 단일행, 단일값으로 결과가 발생한다.
+			rs.next();
+			cnt = rs.getInt("cnt");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+		db.close(rs);
+		db.close(pstmt);
+		db.close(con);
+		}
+		
+		//결과값 반환하고
+		return cnt;
+	}
+	
+	//회원가입 데이터 베이스 전담 처리함수
+	public int addMember(MemberVO mVO) {
+		int cnt = 0;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.ADD_MEMB);
+		pstmt = db.getPSTMT(con,  sql);
+		try {
+			pstmt.setString(1, mVO.getId());
+			pstmt.setString(2,  mVO.getPw());
+			pstmt.setString(3, mVO.getName());
+			pstmt.setString(4, mVO.getMail());
+			pstmt.setString(5, mVO.getTel());
+			pstmt.setString(6, mVO.getGen());
+			pstmt.setInt(7, mVO.getAno());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+			
+		return cnt;
+	}
+	
+
 }
