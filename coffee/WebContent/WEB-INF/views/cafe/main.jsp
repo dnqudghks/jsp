@@ -39,11 +39,13 @@
 			$('#frm').attr('action', '/cafe/member/login.cls');
 			$('#frm').submit();
 		});
-		/* 로그아웃버튼 이벤트 처리*/
+		
+		/* 로그아웃버튼 이벤트 처리 */
 		$('#logout').click(function(){
 			$(location).attr('href', 'http://localhost/cafe/member/logout.cls');
 		});
-		/* 회원가입버튼 이벤트 처리*/
+		
+		/* 회원가입버튼 이벤트처리 */
 		$('#join').click(function(){
 			$(location).attr('href', 'http://localhost/cafe/member/join.cls');
 		});
@@ -58,17 +60,23 @@
 			var tid = $(this).attr('id');
 			var url = '';
 			switch(tid){
-			case 'cafeLogin' :
+			case 'cafeLogin':
 				url = '/cafe/member/login.cafe';
 				break;
-			
-			case 'cafeJoin' :
+			case 'cafeJoin':
 				url = '/cafe/member/join.cafe';
 				break;
-			case 'cafeLogout' :
+			case 'cafeLogout':
 				url = '/cafe/member/logout.cafe';
 				break;
+			case 'cafeMyInfo':
+				url = '/cafe/member/myInfo.cafe';
+				break;
+			case 'membList':
+				url = '/cafe/member/memberList.cafe';
+				break;
 			}
+			
 			$(location).attr('href', url);
 		});
 	});
@@ -123,15 +131,12 @@
 			<%-- 이 경우는 세션에 SID 라는 키값으로 데이터가 입려되어있는 상태이다.
 				 따라서 로그인 처리가 되었다는 말이 된다.
 			 --%>
-			 <div class="w3-col w3-red w3-margin-bottom w3-button" id="myInfo">
+					<div class="w3-col w3-red w3-margin-bottom w3-button" id="myInfo">
 						<h4>내 정보 보기</h4>
-			</div>
+					</div>
 					<div class="w3-col w3-pink w3-margin-bottom w3-button" id="logout">
 						<h4>로그아웃</h4>
 					</div>
-					<script type="text/javascript">
-						alert('아이디 : ${SID}');
-					</script>
 			</c:if>		
 			<c:if test="${empty SID}">
 					<div class="w3-col w3-purple w3-margin-bottom w3-button" id="join">
@@ -140,28 +145,33 @@
 			</c:if>		
 				</div>
 			</div>
-			<!--  수업 예제 링크 버튼 추가 장소 -->
+			
+			<!-- 수업 예제 링크 버튼 추가 장소 -->
 			<div class="w3-col w3-padding w3-border-bottom">
 				<h4 class="w3-col s4 w3-text-grey">Dispatch Controller Request</h4>
 				<div class="w3-col s8">
-			<c:if test="${empty SID }">
-					<div class="w3-col w3-green w3-margin-bottom w3-button cafeMBtn" id="cafeLogin">
+		<c:if test="${empty SID }">
+					<div class="w3-col w3-deep-purple w3-margin-bottom w3-button cafeMBtn" id="cafeLogin">
 						<h4>Cafe Login</h4>
 					</div>
 					<div class="w3-col w3-blue w3-margin-bottom w3-button cafeMBtn" id="cafeJoin">
 						<h4>Cafe Join</h4>
 					</div>
-			</c:if>
-			<c:if test="${not empty SID }">
-					<div class="w3-col w3-purple w3-margin-bottom w3-button " id="cafeMyInfo">
-						<h4>Cafe 내정보보기</h4>
+		</c:if>
+		<c:if test="${not empty SID }">
+					<div class="w3-col w3-purple w3-margin-bottom w3-button cafeMBtn" id="cafeMyInfo">
+						<h4>Cafe 내 정보보기</h4>
 					</div>
 					<div class="w3-col w3-deep-purple w3-margin-bottom w3-button cafeMBtn" id="cafeLogout">
 						<h4>Cafe 로그아웃</h4>
 					</div>
-			</c:if>
+					<div class="w3-col w3-blue w3-margin-bottom w3-button cafeMBtn" id="membList">
+						<h4>회원 목록 보기</h4>
+					</div>
+		</c:if>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </body>

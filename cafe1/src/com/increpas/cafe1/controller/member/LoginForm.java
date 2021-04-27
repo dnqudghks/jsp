@@ -1,4 +1,4 @@
-package com.inrepas.cafe1.controller.member;
+package com.increpas.cafe1.controller.member;
 
 import java.io.IOException;
 

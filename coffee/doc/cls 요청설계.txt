@@ -1,3 +1,4 @@
+
 # main 페이지 요청
 요청내용 : http://localhost/cafe/main.cls
 파라미터 : 무
@@ -48,14 +49,14 @@
 컨트롤러 : com.increpas.coffee.controller.member.Logout
 뷰		 : 
 			redirect ] http://localhost/cafe/main.cls
----------------------------------------------------------------
+
 # 회원가입 폼 보기 요청
 요청내용 : http://localhost/cafe/member/join.cls
 파라미터 : 무
 컨트롤러 : com.increpas.coffee.controller.member.JoinForm
 뷰		 : /WEB-INF/views/member/join.jsp
 
-# 아이디체크 요청 - 비동기 통신 처리
+# 아이디 체크 요청 - 비동기 통신 처리
 요청내용 : http://localhost/cafe/member/idcheck.cls
 파라미터 : id
 컨트롤러 : com.increpas.coffee.controller.member.IdCheck
@@ -66,30 +67,22 @@
 파라미터 : id, name, pw, mail, tel, avt, gen
 컨트롤러 : com.increpas.coffee.controller.member.JoinProc
 뷰		 : 
-			성공
-			redirect ] http://localhost/cafe/main.cls
-			
-			실패
-			redirect ] http://localhost/cafe/join.cls
-			
-기타	 : 회원가입 처리가 성공하면 로그인 처리해기로 한다.			
-			
-			
-# 내 정보 보기 요청
+			성공 : redirect ] http://localhost/cafe/main.cls
+			실패 : redirect ] http://localhost/cafe/member/join.cls
+기타	 :	회원가입 처리가 성고하면 로그인 처리해주기로 한다.
+
+# 내정보 보기 요청
 요청내용 : http://localhost/cafe/member/myInfo.cls
 파라미터 : 무(SID)
-컨트롤러 : com.increpas.coffee.controller.member.MyForm
-뷰		 : /WEB-INF/views/member/menberinfo.jsp
-			
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+컨트롤러 : com.increpas.coffee.controller.member.MyInfo
+뷰		 : /WEB-INF/views/member/memberInfo.jsp
+
+
+
+
+
+
+
+
+
+

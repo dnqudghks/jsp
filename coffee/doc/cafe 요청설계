@@ -1,0 +1,93 @@
+# cafe 요청설계
+
+요청설계 형식
+	요청내용	:	
+	파라미터	:
+	컨트롤러	:
+	뷰			:
+
+
+# 메인 화면 요청 설계
+	요청내용	:	http://localhost/cafe/main.cafe
+	파라미터	:	무
+	컨트롤러	:	com.increpas.cafe.controller.CafeMain
+	뷰			:	/WEB-INF/views/cafe/main.jsp
+	
+------------------------------------------------------------------------------
+# 회원 관련 요청 설계
+
+1. 로그인 폼보기 요청
+	요청내용	:	http://localhost/cafe/member/login.cafe
+	파라미터	:	무
+	컨트롤러	:	com.increpas.cafe.controller.member.LoginForm
+	뷰			:	/WEB-INF/views/cafe/member/login.jsp
+
+2. 회원가입 폼보기 요청
+	요청내용	:	http://locahost/cafe/member/join.cafe
+	파라미터	:	무
+	컨트롤러	:	com.increpas.cafe.controller.member.JoinForm
+	뷰			:	/WEB-INF/views/cafe/member/join.jsp
+
+3. 로그아웃 요청
+	요청내용	:	http://locahost/cafe/member/logout.cafe
+	파라미터	:	무
+	컨트롤러	:	com.increpas.cafe.controller.member.Logout
+	뷰			:	redirect ]
+							http://localhost/cafe/main.cafe
+							
+4. 로그인 처리 요청
+	요청내용	:	http://locahost/cafe/member/loginProc.cafe
+	파라미터	:	id, pw
+	컨트롤러	:	com.increpas.cafe.controller.member.LoginProc
+	뷰			:	
+					redirect ]
+						성공 :
+							http://localhost/cafe/main.cafe
+						실패 :
+							http://localhost/cafe/member/login.cafe
+							
+5. 회원가입 처리 요청
+	요청내용	:	http://locahost/cafe/member/joinProc.cafe
+	파라미터	:	id, pw, name, mail, tel, gen, avt
+	컨트롤러	:	com.increpas.cafe.controller.member.JoinProc
+	뷰			:	
+					redirect ]
+						성공 :
+							http://localhost/cafe/main.cafe
+						실패 :
+							http://localhost/cafe/member/join.cafe
+
+6. 내 정보보기 요청
+	요청내용	:	http://locahost/cafe/member/myInfo.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.member.MyInfo
+	뷰			:	/WEB-INF/views/cafe/member/memberInfo.jsp
+
+7. 회원 목록보기 요청
+	요청내용	:	http://locahost/cafe/member/memberList.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.member.MemberList
+	뷰			:	/WEB-INF/views/cafe/member/memberList.jsp
+
+8. 회원 정보 보기 요청
+	요청내용	:	http://locahost/cafe/member/memberInfo.cafe
+	파라미터	:	mno
+	컨트롤러	:	com.increpas.cafe.controller.member.MemberInfo
+	뷰			:	/WEB-INF/views/cafe/member/memberInfo.jsp
+
+9. 내 정보 수정 보기 요청
+	요청내용	:	http://locahost/cafe/member/myInfoEdit.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.member.MyInfoEdit
+	뷰			:	/WEB-INF/views/cafe/member/myInfoEdit.jsp
+
+9. 내 정보 수정 처리 요청
+	요청내용	:	http://locahost/cafe/member/myInfoEditProc.cafe
+	파라미터	:	pw || mail || tel || avt 
+	컨트롤러	:	com.increpas.cafe.controller.member.MyInfoEditProc
+	뷰			:	
+					redirect ]
+					성공 ]
+							http://localhost/cafe/member/myInfo.cafe
+					실패 ]
+							http://localhost/cafe/member/myInfoEdit.cafe

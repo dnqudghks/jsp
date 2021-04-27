@@ -1,4 +1,4 @@
-package com.inrepas.cafe1.controller;
+package com.increpas.cafe1.controller;
 
 
 import javax.servlet.*;

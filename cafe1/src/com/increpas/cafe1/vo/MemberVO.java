@@ -1,7 +1,7 @@
-package com.increpas.cafe.vo;
+package com.increpas.cafe1.vo;
 
-import java.text.*;
 import java.sql.*;
+import java.text.*;
 
 public class MemberVO {
 	private int mno, ano;
@@ -67,7 +67,7 @@ public class MemberVO {
 	}
 	public void setSdate() {
 		SimpleDateFormat form1 = new SimpleDateFormat("yyyy/MM/dd");
-		SimpleDateFormat form2 = new SimpleDateFormat(" HH:mm:ss");
+		SimpleDateFormat form2 = new SimpleDateFormat("HH:mm:ss");
 		sdate = form1.format(jDate) + form2.format(jTime);
 	}
 	public void setSdate(String sdate) {
@@ -86,4 +86,6 @@ public class MemberVO {
 		this.jTime = jTime;
 		setSdate();
 	}
+	
+	
 }

@@ -1,4 +1,4 @@
-package com.inrepas.cafe1.db;
+package com.increpas.cafe1.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
