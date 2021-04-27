@@ -75,6 +75,9 @@
 			case 'membList':
 				url = '/cafe/member/memberList.cafe';
 				break;
+			case 'gboard':
+				url = '/cafe/gboard/gBoardList.cafe';
+				break;
 			}
 			
 			$(location).attr('href', url);
@@ -170,9 +173,20 @@
 					</div>
 		</c:if>
 				</div>
+				</div>
+				
+			<!-- 방명록 버튼 추가 장소 -->
+			<div class="w3-col w3-padding w3-border-bottom">
+				<h4 class="w3-col s4 w3-text-grey">방명록</h4>
+				<div class="w3-col s8">
+					<div class="w3-col w3-blue w3-margin-bottom w3-button cafeMBtn" id="gboard">
+						<h4>방명록 리스트</h4>
+					</div>
+					</div>
+		
+				</div>
 			</div>
 			
-		</div>
 	</div>
 </body>
 </html>

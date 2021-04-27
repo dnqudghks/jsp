@@ -9,7 +9,7 @@ import javax.sql.DataSource;
  * 이 클래스는 coffee 프로젝트에서 
  * 커넥션 풀에 있는 커넥션을 이용해서 데이터베이스 작업을 할 유틸리티 클래스
  * 
- * @author	조경국
+ * @author	우병환
  * @since	2021.04.21
  * @version	v.1.0
  */

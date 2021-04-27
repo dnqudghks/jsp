@@ -111,9 +111,9 @@ public class CafeDBCP {
 			}else if(o instanceof Statement) {
 				((Statement) o).close();
 			}else if(o instanceof PreparedStatement) {
-			((Statement) o).close();
+			((PreparedStatement) o).close();
 			}else if(o instanceof ResultSet) {
-				((Statement) o).close();
+				((ResultSet) o).close();
 			}
 		}catch(Exception e) {
 			e.printStackTrace();	

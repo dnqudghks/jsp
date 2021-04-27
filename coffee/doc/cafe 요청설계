@@ -91,3 +91,16 @@
 							http://localhost/cafe/member/myInfo.cafe
 					실패 ]
 							http://localhost/cafe/member/myInfoEdit.cafe
+======================================================================
+#방명록 요청설계
+9. 방명록 작성 폼보기 요청
+	요청내용	:	http://locahost/cafe/gboard/gBoardWrite.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.gboard.GuestWrite
+	뷰			:	/WEB-INF/views/cafe/gboard/gBoardWrite.jsp
+	
+10. 방명록 리스트 보기 요청
+	요청내용	:	http://locahost/cafe/gboard/gBoardList.cafe
+	파라미터	:	무
+	컨트롤러	:	com.increpas.cafe.controller.gboard.GuestList
+	뷰			:	/WEB-INF/views/cafe/gboard/gBoardList.jsp
