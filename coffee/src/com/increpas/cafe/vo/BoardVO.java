@@ -6,8 +6,32 @@ import java.text.SimpleDateFormat;
 import java.text.*;
 
 public class BoardVO {
-	private int gno, ano, mno;
+	private int gno, rno, bno, ano, mno, cnt, step;
 	private String id, name, title, body, sdate, avatar;
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	public int getStep() {
+		return step;
+	}
+	public void setStep(int step) {
+		this.step = step;
+	}
 	private Date wdate;
 	private Time wtime;
 	public int getGno() {
@@ -88,9 +112,10 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [gno=" + gno + ", mno=" + mno + ", id=" + id + ", name=" + name + ", title=" + title + ", body="
-				+ body + ", sdate=" + sdate + ", avatar=" + avatar + ", wdate=" + wdate + ", wtime=" + wtime
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+		return "BoardVO : gno=" + gno + ", rno=" + rno + ", bno=" + bno + ", ano=" + ano + ", mno=" + mno + ", cnt="
+				+ cnt + ", step=" + step + ", id=" + id + ", name=" + name + ", title=" + title + ", body=" + body
+				+ ", sdate=" + sdate + ", avatar=" + avatar + ", wdate=" + wdate + ", wtime=" + wtime;
 	}
-}
+	
+	}
+

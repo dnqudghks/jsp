@@ -74,7 +74,7 @@ public class GuestBoardDao {
 				gVO.setGno(rs.getInt("gno"));
 				gVO.setMno(rs.getInt("mno"));
 				gVO.setId(rs.getString("id"));
-				gVO.setBody(rs.getString("body"));
+				gVO.setBody(rs.getString("body").replaceAll("\r\n", "<br>"));
 				gVO.setAvatar(rs.getString("avatar"));
 				gVO.setSdate(rs.getDate("wdate"));
 				//vo가완성되면 list에 담고
@@ -114,6 +114,36 @@ public class GuestBoardDao {
 			db.close(pstmt);
 			db.close(con);
 		}
+		return cnt;
+	}
+	
+	//방명록 글 등록 데이터베이스 작업 전담 처리함수
+	public int addGBoard(int mno, String body) {
+		//반환값 변수
+		int cnt = 0;
+		//할일
+		//1,커넥션 꺼내오고
+		con = db.getCon();
+		//2.질의명령 가져오고
+		String sql = gSQL.getSQL(gSQL.ADD_GBRD);
+		//3. 스테이트먼트 준비하고(pstmt)
+		pstmt= db.getPSTMT(con, sql);
+
+		try{
+			//4. 질의명령 완성하고
+			pstmt.setInt(1,  mno);
+			pstmt.setString(2, body);
+			//5. 질의명령 보내고 결과받고
+			cnt = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(stmt);
+			db.close(con);
+		}
+		
+		
+		//6.결과 반환해주고
 		return cnt;
 	}
 }

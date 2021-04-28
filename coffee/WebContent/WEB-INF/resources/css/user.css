@@ -131,3 +131,10 @@
 .noresize{
 		resize: none;
 }
+
+.w120{
+	width:120px;
+}
+.h100per{
+	height: 100%
+}

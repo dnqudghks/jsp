@@ -104,3 +104,55 @@
 	파라미터	:	무
 	컨트롤러	:	com.increpas.cafe.controller.gboard.GuestList
 	뷰			:	/WEB-INF/views/cafe/gboard/gBoardList.jsp
+	
+11. 방명록 리스트 보기 요청
+	요청내용	:	http://locahost/cafe/gboard/gBoardWriteProc.cafe
+	파라미터	:	무
+	컨트롤러	:	com.increpas.cafe.controller.gboard.GuestWriteProc
+	뷰			:	
+						
+					redirect ]	
+					
+						성공 : http://localhost/cafe/gboard/gBoardList.cafe
+						
+						실패 : http://localhost/gboard/gBoardWrite.cafe
+=============================================================================
+댓글게시판 요청 설계
+
+1. 게시글 리스트 보기 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardList.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardList
+	뷰			:	/WEB-INF/views/cafe/reboard/reBoardList.jsp
+	
+2. 게시글 쓰기 폼보기 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardWrite.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardWrite
+	뷰			:	/WEB-INF/views/cafe/reboard/reBoardWrite.jsp
+	
+3. 게시글 등록 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardProc.cafe
+	파라미터	:	무(SID)
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardProc
+	뷰			:	
+					redirect ]
+					성공 :
+					/cafe/reBoard/reBoardList.cafe 
+					실패 :
+					/cafe/reBoard/reBoardWrite.cafe
+	
+4. 댓글 쓰기 폼보기 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardReplay.cafe
+	파라미터	:	rno
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardReplay
+	뷰			:	/WEB-INF/views/cafe/reboard/reBoardList.jsp
+	
+5. 댓글 등록 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardReplyProc.cafe
+	파라미터	: 	upno, title, body
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardReplayProc
+	뷰			:	
+					redirect ]
+					성공 : /cafe/reBoard/reBoardList.cafe 
+					실패 : /cafe/reBoard/reBoardReply.cafe

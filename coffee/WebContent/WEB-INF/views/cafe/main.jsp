@@ -78,6 +78,9 @@
 			case 'gboard':
 				url = '/cafe/gboard/gBoardList.cafe';
 				break;
+			case 'reboard':
+				url = '/cafe/reBoard/reBoardList.cafe';
+				break;
 			}
 			
 			$(location).attr('href', url);
@@ -181,6 +184,16 @@
 				<div class="w3-col s8">
 					<div class="w3-col w3-blue w3-margin-bottom w3-button cafeMBtn" id="gboard">
 						<h4>방명록 리스트</h4>
+					</div>
+					</div>
+		
+				</div>
+			<!-- 방명록 버튼 추가 장소 -->
+			<div class="w3-col w3-padding w3-border-bottom">
+				<h4 class="w3-col s4 w3-text-grey">댓글게시판</h4>
+				<div class="w3-col s8">
+					<div class="w3-col w3-cyan w3-margin-bottom w3-button cafeMBtn" id="reboard">
+						<h4>댓글게시판 리스트</h4>
 					</div>
 					</div>
 		
