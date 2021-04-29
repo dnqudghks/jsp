@@ -156,3 +156,26 @@
 					redirect ]
 					성공 : /cafe/reBoard/reBoardList.cafe 
 					실패 : /cafe/reBoard/reBoardReply.cafe
+
+6. 글삭제 처리 요청		
+	요청내용	:	http://locahost/cafe/reBoard/reBoardDel.cafe
+	파라미터	: 	rno
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardDel
+	뷰			:	
+					redirect ]
+					성공 & 실패 : /cafe/reBoard/reBoardList.cafe 
+
+7. 글 수정 폼보기 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardEdit.cafe
+	파라미터	:	rno
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardEdit
+	뷰			:	/WEB-INF/views/cafe/reboard/reBoradEdit.jsp
+	
+8. 글 수정 처리 요청
+	요청내용	:	http://locahost/cafe/reBoard/reBoardEditProc.cafe
+	파라미터	:	rno, title, body
+	컨트롤러	:	com.increpas.cafe.controller.reBoard.ReBoardEditProc
+	뷰			:	
+					redirect ]
+						성공 : /cafe/reBoard/reBoardList.cafe
+						실패 : /cafe/reBoard/reBoardEdit.cafe	

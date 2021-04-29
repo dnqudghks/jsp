@@ -1,37 +1,12 @@
 package com.increpas.cafe.vo;
 
-import java.sql.*;
-import java.text.SimpleDateFormat;
-
+import java.sql.Date;
+import java.sql.Time;
 import java.text.*;
 
 public class BoardVO {
-	private int gno, rno, bno, ano, mno, cnt, step;
-	private String id, name, title, body, sdate, avatar;
-	public int getRno() {
-		return rno;
-	}
-	public void setRno(int rno) {
-		this.rno = rno;
-	}
-	public int getBno() {
-		return bno;
-	}
-	public void setBno(int bno) {
-		this.bno = bno;
-	}
-	public int getCnt() {
-		return cnt;
-	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
-	}
-	public int getStep() {
-		return step;
-	}
-	public void setStep(int step) {
-		this.step = step;
-	}
+	private int gno, rno, bno, upno, mno, ano, cnt, step;
+	private String id, name, title, uptitle, body, sdate, avatar;
 	private Date wdate;
 	private Time wtime;
 	public int getGno() {
@@ -46,12 +21,41 @@ public class BoardVO {
 	public void setMno(int mno) {
 		this.mno = mno;
 	}
-	
 	public int getAno() {
-			return ano;
-		}
+		return ano;
+	}
 	public void setAno(int ano) {
-			this.ano = ano;
+		this.ano = ano;
+	}
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+	public int getUpno() {
+		return upno;
+	}
+	public void setUpno(int upno) {
+		this.upno = upno;
+	}
+	public int getStep() {
+		return step;
+	}
+	public void setStep(int step) {
+		this.step = step;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
 	public String getId() {
 		return id;
@@ -70,6 +74,12 @@ public class BoardVO {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getUptitle() {
+		return uptitle;
+	}
+	public void setUptitle(String uptitle) {
+		this.uptitle = uptitle;
 	}
 	public String getBody() {
 		return body;
@@ -112,10 +122,9 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO : gno=" + gno + ", rno=" + rno + ", bno=" + bno + ", ano=" + ano + ", mno=" + mno + ", cnt="
+		return "BoardVO : gno=" + gno + ", rno=" + rno + ", bno=" + bno + ", mno=" + mno + ", ano=" + ano + ", cnt="
 				+ cnt + ", step=" + step + ", id=" + id + ", name=" + name + ", title=" + title + ", body=" + body
 				+ ", sdate=" + sdate + ", avatar=" + avatar + ", wdate=" + wdate + ", wtime=" + wtime;
 	}
 	
-	}
-
+}
