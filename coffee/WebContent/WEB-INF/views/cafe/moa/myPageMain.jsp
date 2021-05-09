@@ -104,67 +104,84 @@
 	</div>
 </body></body>
 </body>
-	<div class="block">
-	<div class="row">
-                    <!-- column -->
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Basic Table</h4>
-                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+		<div id="colorlib-main">
+			<section id="colorlib-hero" class="js-fullheight" data-section="home" style="height: 900px;">
+				<div class="flexslider js-fullheight" style="height: 600px;">
+					<div class="gallary-header text-center">
+					<br>
+					<h3>
+						회원님의 잔여 포인트 : 
+						<input type="text" name="point" id="point" 
+									class=" w3-input w3-border w3-border-grey w3-margin-top" 
+									placeholder="10,000 P"style="text-align:right; width:200px; ">
+					</h3>
+				</div>
+				<div class="packages-content">
+					<div class="row">
+					
+						<div class="w3-margin-left col-md-4 col-sm-6 w3-margin-top">
+							<div class="single-package-item">
+								<div class="single-package-item-txt">
+									<h3>최근 본 전시 <span class="pull-right"></span></h3>
+									<div class="packages-para">
+								<img src="/cafe/img/images/cover_bg_1.jpg" width="150">
+								<img src="/cafe/img/images/blog-4.jpg" width="150">
+									
+									</div><!--/.packages-review-->
+									<!--
+									<div class="about-btn">
+										<button class="w3-margin-top w3-margin-bottom about-view packages-btn">
+											더보기
+										</button>
+									</div><!--/.about-btn-->
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						</div>
+						
+						<div class="col-md-4 col-sm-6 w3-margin-top">
+							<div class="single-package-item">
+								<div class="single-package-item-txt">
+									<h3>최근 본 이벤트 <span class="pull-right"></span></h3>
+									<div class="packages-para">
+										<img src="/cafe/img/images/blog-3.jpg" width="150">
+										<img src="/cafe/img/images/blog-2.jpg" width="150">
+									</div><!--/.packages-para-->
+									<!-- 
+									<div class="about-btn">
+									
+										<button class="w3-margin-top w3-margin-bottom about-view packages-btn">
+											더보기
+										</button>
+									</div><!--/.about-btn-->
+									
+									 
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						<div class="col-md-4 col-sm-6 ">
+							<div class="single-package-item">
+								<div class="single-package-item-txt">
+									<h3>찜 목록 <span class="pull-right"></span></h3>
+									<div class="packages-para">
+								<img src="/cafe/img/images/blog-1.jpg" width="150">
+								<img src="/cafe/img/images/img_bg_2.jpg" width="150">
+										
+											
+									</div><!--/.packages-review-->
+									<div class="about-btn">
+										<button class="w3-color-black w3-margin-top w3-margin-bottom  about-view packages-btn">
+											더보기
+										</button>
+									</div><!--/.about-btn-->
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						
+		</div><!-- end:colorlib-main -->
+	</div><!-- end:container-wrap -->
+	</div>
 </html>

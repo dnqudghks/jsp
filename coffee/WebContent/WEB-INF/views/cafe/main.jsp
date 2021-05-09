@@ -79,7 +79,7 @@
 				url = '/cafe/gboard/gBoardList.cafe';
 				break;
 			case 'reboard':
-				url = '/cafe/reBoard/reBoardList.cafe';
+				url = '/cafe/reboard/reBoardList.cafe';
 				break;
 			}
 			
